@@ -1,27 +1,65 @@
-nav {
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap");
+nav .desktop-bar {
   display: flex;
   padding: 1vw 3vw;
+  font-family: "Titillium Web", sans-serif;
+  padding: 2vw 12vw;
+  display: none;
 }
-nav .logo p {
+nav .desktop-bar .logo p {
   margin: 0;
 }
-nav .logo:hover {
+nav .desktop-bar .logo:hover {
   cursor: pointer;
 }
-nav .links {
-  display: flex;
-  gap: 1vw;
+nav .desktop-bar .links-container {
   margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
-nav .links a {
-  text-decoration: none;
+nav .desktop-bar .links-container .searchbar {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #DFDFDF;
+  width: 50%;
+  align-self: flex-end;
+  justify-content: space-between;
+  padding: 0.3vw;
 }
-nav .links a:hover {
+nav .desktop-bar .links-container .searchbar input {
+  border: none;
+}
+nav .desktop-bar .links-container .searchbar input::placeholder {
+  font-family: "Titillium Web", sans-serif;
+}
+nav .desktop-bar .links-container .searchbar input:focus {
+  outline: none;
+}
+nav .desktop-bar .links-container .searchbar svg:hover {
   cursor: pointer;
-  color: lime;
+  stroke: #d39d5b;
 }
-nav .links .active {
-  color: lime;
+nav .desktop-bar .links-container .links {
+  display: flex;
+  gap: 2vw;
+}
+nav .desktop-bar .links-container .links a {
+  text-decoration: none;
+  color: #30454c;
+}
+nav .desktop-bar .links-container .links a:hover {
+  cursor: pointer;
+  color: #d39d5b;
+}
+nav .desktop-bar .links-container .links .active {
+  color: #d39d5b;
+}
+
+@media only screen and (min-width: 1000px) {
+  nav .desktop-bar {
+    display: flex;
+  }
 }
 
 /*# sourceMappingURL=output.css.map */
