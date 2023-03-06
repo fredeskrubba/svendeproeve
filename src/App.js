@@ -1,7 +1,8 @@
 import { Route } from "wouter";
 import Home from "./pages/Home";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
+import Events from "./pages/Events";
+import Actors from "./pages/Actors";
+import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import "./styles/output.css";
 
@@ -11,8 +12,9 @@ function App() {
     <div className="App">
       <Nav/>
       <Route path="/home" component={Home}/>
-      <Route path="/about" component={About}/>
-      <Route path="/contact" component={Contact}/>
+      <Route path="/events" component={Events}/>
+      <Route path="/actors" component={Actors}/>
+      <Route path="/login" component={Login}/>
     </div>
   );
 }

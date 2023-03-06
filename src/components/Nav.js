@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link, useRoute } from 'wouter'
+import navLogo from "../assets/img/nav-logo.png"
+import {ReactComponent as SearchIcon} from "../assets/icons/searchIcon.svg"
 
 // link component that tracks the current active page
 const ActiveLink = props => {
@@ -14,24 +16,33 @@ const ActiveLink = props => {
 const Nav = () => {
   return (
     <nav>
-        <Link href="/home">
-          <section className='logo'>
-            <p>Logo</p>
+        <div className='desktop-bar'>
+          <Link href="/home">
+            <section className='logo'>
+              <img src={navLogo} alt="Nav-logo" />
+            </section>
+          </Link>
+          <section className='links-container'>
+            <div className='searchbar'>
+              <input type="text" placeholder='INDTAST SØGEORD'/>
+              <SearchIcon/>
+            </div>
+            <div className='links'>
+              <ActiveLink href='/home'>
+                  FORSIDE
+              </ActiveLink>
+              <ActiveLink href='/events'>
+                  FORESTILLINGER & EVENTS 
+              </ActiveLink>
+              <ActiveLink href='/actors'>
+                  SKUESPILLERE
+              </ActiveLink>
+              <ActiveLink href='/login'>
+                  LOGIN
+              </ActiveLink>
+            </div>
           </section>
-        </Link>
-        <section className='links'>
-          <ActiveLink href='/home'>
-              Home
-          </ActiveLink>
-          <ActiveLink href='/about'>
-              About
-          </ActiveLink>
-          <ActiveLink href='/contact'>
-              Contact
-          </ActiveLink>
-        </section>
-        <section>
-        </section>
+        </div>
     </nav>
   )
 }

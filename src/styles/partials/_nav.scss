@@ -1,29 +1,73 @@
 @use "./variables";
 
 nav{
-    display: flex;
-    padding: 1vw 3vw;
-    .logo{
-        p{
-            margin: 0;
-        }
-        &:hover{
-           cursor: pointer; 
-        }
-    }
-    .links{
+    .desktop-bar{
         display: flex;
-        gap: 1vw;
-        margin-left: auto;
-        a{
-            text-decoration: none;
+        padding: 1vw 3vw;
+        font-family: variables.$main-font;
+        padding: 2vw 12vw;
+        display: none;
+        .logo{
+            p{
+                margin: 0;
+            }
             &:hover{
-                cursor: pointer;
-                color: lime;
+               cursor: pointer; 
             }
         }
-        .active{
-            color: lime;
+        .links-container{
+            margin-left: auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .searchbar{
+                display: flex;
+                align-items: center;
+                border-bottom: 1px solid #DFDFDF;
+                width: 50%;
+                align-self: flex-end;
+                justify-content: space-between;
+                padding: 0.3vw;
+                input{
+                    border: none;
+                    &::placeholder{
+                        font-family: variables.$main-font;
+                    }
+                    &:focus{
+                        outline: none;
+                    }
+                }
+                svg{
+                    &:hover{
+                        cursor: pointer;
+                        stroke: variables.$primary-color;
+                    }
+                }
+            }
+            .links{
+                display: flex;
+                gap: 2vw;
+                a{
+                    text-decoration: none;
+                    color: variables.$tertiary-color;
+                    &:hover{
+                        cursor: pointer;
+                        color: variables.$primary-color;
+                    }
+                }
+                .active{
+                    color: variables.$primary-color;
+                }
+            }
+    
         }
     }
 }
+
+@media only screen and (min-width: 1000px) {
+    nav{
+        .desktop-bar{
+            display: flex;
+        }
+    }
+  }
