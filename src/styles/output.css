@@ -138,11 +138,11 @@ footer .icons {
   height: inherit;
   box-sizing: border-box;
   width: 100%;
-  border: #d39d5b 5px solid;
+  border: #ad7a51 5px solid;
   object-fit: cover;
 }
 .event-header .header-info {
-  border: 1px solid #d39d5b;
+  border: 1px solid #ad7a51;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -169,6 +169,75 @@ footer .icons {
 }
 .event-header .header-info .genre {
   font-weight: 400;
+}
+
+.card-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw;
+}
+.card-section .event-card {
+  width: 100%;
+}
+.card-section .event-card img {
+  display: block;
+  object-fit: cover;
+  height: 20vw;
+  width: 100%;
+  border: 5px solid #ad7a51;
+  box-sizing: border-box;
+}
+.card-section .event-card .card-info {
+  border: 1px solid #ad7a51;
+  box-sizing: border-box;
+  padding: 1vw;
+  text-align: end;
+}
+.card-section .event-card .card-info .date {
+  font-weight: 700;
+  border-bottom: 1px solid #d4d4d4;
+}
+.card-section .event-card .card-info h2 {
+  font-size: 4.2vw;
+  margin: 0;
+  color: #d39d5b;
+  font-weight: 400;
+}
+.card-section .event-card .card-info h3 {
+  margin: 0;
+  font-weight: 400;
+}
+.card-section .event-card .card-info .buttons {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1vw;
+  color: white;
+  gap: 2vw;
+  font-weight: 700;
+}
+.card-section .event-card .card-info .buttons p {
+  padding: 1vw 1.5vw;
+}
+.card-section .event-card .card-info .buttons p:hover {
+  cursor: pointer;
+}
+.card-section .event-card .card-info .buttons .read {
+  background-color: #30454c;
+}
+.card-section .event-card .card-info .buttons .buy {
+  background-color: #d39d5b;
+}
+
+.allEvents {
+  display: flex;
+  margin-bottom: 1vw;
+}
+.allEvents p {
+  background-color: #ad7a51;
+  padding: 1vw;
+  color: white;
+  font-weight: 700;
+  margin-left: auto;
 }
 
 body {

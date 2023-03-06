@@ -10,12 +10,12 @@
         height: inherit;
         box-sizing: border-box;
         width: 100%;
-        border: variables.$primary-color 5px solid;
+        border: variables.$secondary-color 5px solid;
         object-fit: cover;
         
     }
     .header-info{
-        border: 1px solid variables.$primary-color;
+        border: 1px solid variables.$secondary-color;
         display: flex;
         flex-direction: column;
         box-sizing: border-box;
@@ -44,5 +44,76 @@
         .genre{
             font-weight: 400;
         }
+    }
+}
+
+
+.card-section{
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2vw;
+    .event-card{
+        width: 100%;
+        img{
+            display: block;
+            object-fit: cover;
+            height: 20vw;
+            width: 100%;
+            border: 5px solid variables.$secondary-color;
+            box-sizing: border-box;
+        }
+        .card-info{
+            border: 1px solid variables.$secondary-color;
+            box-sizing: border-box;
+            padding: 1vw;
+            text-align: end;
+            .date{
+                font-weight: 700;
+                border-bottom: 1px solid #d4d4d4;
+            }
+            h2{
+                font-size: 4.2vw;
+                margin: 0;
+                color: variables.$primary-color;
+                font-weight: 400;
+            }
+            h3{
+                margin: 0;
+                font-weight: 400;
+            }
+            .buttons{
+                display: flex;
+                justify-content: flex-end;
+                font-size: 1vw;
+                color: white;
+                gap: 2vw;
+                font-weight: 700;
+                p{
+                    padding: 1vw 1.5vw;
+                    &:hover{
+                        cursor: pointer;
+                    }
+                }
+                .read{
+                    background-color: variables.$tertiary-color;
+                }
+                .buy{
+                    background-color: variables.$primary-color;
+                }
+            }
+        }
+    }
+}
+
+.allEvents{
+    display: flex;
+    margin-bottom: 1vw;
+    p{
+        background-color: variables.$secondary-color;
+        padding: 1vw;
+        color: white;
+        font-weight: 700;
+        margin-left: auto;
     }
 }
