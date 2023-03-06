@@ -1,5 +1,5 @@
 import { Route } from "wouter";
-import Home from "./pages/Home";
+import Home from "./pages/home/Home";
 import Events from "./pages/Events";
 import Actors from "./pages/Actors";
 import Login from "./pages/Login";

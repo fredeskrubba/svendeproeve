@@ -8,8 +8,9 @@ footer{
     grid-template-columns: 1fr 1fr 1fr 2fr;
     padding: 1.7vw 3vw;
     min-height: 20vw;
-    position: absolute;
+    
     bottom: 0;
+    
     section{
         .last-para{
             margin-top: 2vw;
@@ -34,3 +35,11 @@ footer{
         justify-self: flex-end;
     }
 }
+
+
+@media only screen and (max-width: 1000px) {
+    footer{
+        box-sizing: border-box;
+        width: 100%;
+    }
+  }

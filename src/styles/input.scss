@@ -1,6 +1,7 @@
 @use "./partials/variables";
 @use "./partials/nav";
 @use "./partials/footer";
+@use "./partials/home";
 
 body{
     font-family: variables.$main-font;
@@ -10,6 +11,7 @@ body{
 
 @media only screen and (min-width: 1000px) {
     body{
-        padding: 0 8vw;
+        padding: 3vw 8vw;
+        padding-bottom: 0;
     }
   }

@@ -1,0 +1,48 @@
+@use "./variables";
+
+.event-header{
+    margin-bottom: 10vw;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 30vw;
+    margin: 2vw 0;
+    img{
+        height: inherit;
+        box-sizing: border-box;
+        width: 100%;
+        border: variables.$primary-color 5px solid;
+        object-fit: cover;
+        
+    }
+    .header-info{
+        border: 1px solid variables.$primary-color;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        padding: 1vw;
+        height: 100%;
+        width: 100%;
+        text-align: end;
+        justify-content: flex-end;
+        .place{
+            margin: 0;
+    
+        }
+        .date{
+            font-weight: 700;
+            border-bottom: 1px solid #dfdfdf;
+            margin: 0;
+        }
+        
+        .title{
+            font-family: variables.$header-font;
+            color: variables.$primary-color;
+            font-size: 3vw;
+            font-weight: 400;
+            margin: 0;
+        }
+        .genre{
+            font-weight: 400;
+        }
+    }
+}
