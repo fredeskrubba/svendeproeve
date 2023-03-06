@@ -131,7 +131,7 @@ footer .icons {
   margin-bottom: 10vw;
   display: grid;
   grid-template-columns: 1fr 3fr;
-  height: 22vw;
+  height: 30vw;
   margin: 2vw 0;
 }
 .event-header img {
@@ -150,6 +150,7 @@ footer .icons {
   height: 100%;
   width: 100%;
   text-align: end;
+  justify-content: flex-end;
 }
 .event-header .header-info .place {
   margin: 0;

@@ -15,12 +15,12 @@ const Header = () => {
       {events !== null ? 
         <section className='event-header'>
           <article className='header-info'>
-            <p className='place'>{events.items[2].stage_name}</p>
-            <p className='date'>{`${events.items[2].startdate} - ${events.items[2].stopdate}` }</p>
-            <h1 className='title'>{events.items[2].title}</h1>
-            <h3 className='genre'>{events.items[2].genre}</h3>
+            <p className='place'>{events.items[5].stage_name}</p>
+            <p className='date'>{`${events.items[5].startdate} - ${events.items[5].stopdate}` }</p>
+            <h1 className='title'>{events.items[5].title}</h1>
+            <h3 className='genre'>{events.items[5].genre}</h3>
           </article>
-          <img src={events.items[2].image_small} alt="" />
+          <img src={events.items[5].image_small} alt="" />
         </section>
           
            : null}
