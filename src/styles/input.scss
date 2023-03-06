@@ -1,2 +1,15 @@
 @use "./partials/variables";
 @use "./partials/nav";
+@use "./partials/footer";
+
+body{
+    font-family: variables.$main-font;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@media only screen and (min-width: 1000px) {
+    body{
+        padding: 0 8vw;
+    }
+  }

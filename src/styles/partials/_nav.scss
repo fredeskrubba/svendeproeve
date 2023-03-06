@@ -1,12 +1,8 @@
 @use "./variables";
 
-body{
-    font-family: variables.$main-font;
-    margin: 0;
-}
 nav{
+    margin-top: 3vw;
     .desktop-bar{
-        padding: 1vw 3vw;
         display: none;
         .logo{
             p{

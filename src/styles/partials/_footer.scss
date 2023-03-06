@@ -1,0 +1,36 @@
+@use "./variables";
+
+footer{
+    background-color: variables.$tertiary-color;
+    display: grid;
+    gap: 6vw;
+    color: white;
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    padding: 1.7vw 3vw;
+    min-height: 20vw;
+    position: absolute;
+    bottom: 0;
+    section{
+        .last-para{
+            margin-top: 2vw;
+        }
+        .service{
+            margin-bottom: 6vw;
+        }
+    }
+    h2{
+        margin: 0.3vw 0;
+        font-size: 1.5vw;
+        white-space: nowrap;
+    }
+    p{
+        margin: 0;
+        font-size: 1vw;
+        white-space: nowrap;
+    }
+    .icons{
+        display: flex;
+        gap: 2vw;
+        justify-self: flex-end;
+    }
+}
