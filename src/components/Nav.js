@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, useRoute } from 'wouter'
 import navLogo from "../assets/img/nav-logo.png"
 import {ReactComponent as SearchIcon} from "../assets/icons/searchIcon.svg"
+import {ReactComponent as BurgerIcon} from "../assets/icons/burger-icon.svg"
+import { useState } from 'react'
 
 // link component that tracks the current active page
 const ActiveLink = props => {
@@ -14,6 +16,7 @@ const ActiveLink = props => {
 };
 
 const Nav = () => {
+  const [visible, setVisible] = useState("hide")
   return (
     <nav>
         <div className='desktop-bar'>
@@ -42,6 +45,23 @@ const Nav = () => {
               </ActiveLink>
             </div>
           </section>
+        </div>
+        <div className='mobile-bar'>
+          <BurgerIcon onClick={()=>{visible === "hide" ? setVisible("show") : setVisible("hide")}}/>
+          <article className={`links ${visible}`}>
+            <ActiveLink href="/home">
+              FORSIDE
+            </ActiveLink>
+            <ActiveLink href="/events">
+              FORESTILLINGER & EVENTS
+            </ActiveLink>
+            <ActiveLink href="/actors">
+              SKUESPILLERE
+            </ActiveLink>
+            <ActiveLink href="/login">
+              LOGIN
+            </ActiveLink>
+          </article>
         </div>
     </nav>
   )

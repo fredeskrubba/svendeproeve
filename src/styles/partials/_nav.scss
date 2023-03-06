@@ -1,11 +1,12 @@
 @use "./variables";
 
+body{
+    font-family: variables.$main-font;
+    margin: 0;
+}
 nav{
     .desktop-bar{
-        display: flex;
         padding: 1vw 3vw;
-        font-family: variables.$main-font;
-        padding: 2vw 12vw;
         display: none;
         .logo{
             p{
@@ -62,12 +63,44 @@ nav{
     
         }
     }
+    .mobile-bar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        background-color: variables.$primary-color;
+        svg{
+            max-width: 12vw;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .links{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3vw;
+            width: 100%;
+            a {
+                color: variables.$tertiary-color;
+                text-decoration: none;
+            }
+        }
+        .show{
+            display: flex;
+        }
+        .hide{
+            display: none;
+        }
+    }
 }
 
 @media only screen and (min-width: 1000px) {
     nav{
         .desktop-bar{
             display: flex;
+        }
+        .mobile-bar{
+            display: none;
         }
     }
   }
