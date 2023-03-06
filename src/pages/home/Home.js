@@ -23,6 +23,9 @@ const Home = () => {
           })
         : null}
       </section>
+      <section className='allEvents'>
+          <p> SE ALLE FORESTILLINGER</p>
+      </section>
     </div>
   )
 }
