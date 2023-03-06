@@ -1,0 +1,29 @@
+@use "./variables";
+
+nav{
+    display: flex;
+    padding: 1vw 3vw;
+    .logo{
+        p{
+            margin: 0;
+        }
+        &:hover{
+           cursor: pointer; 
+        }
+    }
+    .links{
+        display: flex;
+        gap: 1vw;
+        margin-left: auto;
+        a{
+            text-decoration: none;
+            &:hover{
+                cursor: pointer;
+                color: lime;
+            }
+        }
+        .active{
+            color: lime;
+        }
+    }
+}

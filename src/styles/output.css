@@ -1,0 +1,27 @@
+nav {
+  display: flex;
+  padding: 1vw 3vw;
+}
+nav .logo p {
+  margin: 0;
+}
+nav .logo:hover {
+  cursor: pointer;
+}
+nav .links {
+  display: flex;
+  gap: 1vw;
+  margin-left: auto;
+}
+nav .links a {
+  text-decoration: none;
+}
+nav .links a:hover {
+  cursor: pointer;
+  color: lime;
+}
+nav .links .active {
+  color: lime;
+}
+
+/*# sourceMappingURL=output.css.map */
