@@ -4,10 +4,20 @@ import {ReactComponent as TicketIcon} from "../../assets/icons/ticket.svg"
 import {ReactComponent as FavouriteIcon} from "../../assets/icons/favourite.svg"
 import {ReactComponent as StarIcon} from "../../assets/icons/star_1.svg"
 import EventBlock from './EventBlock'
+import { useReservationStore } from '../../stores/reservationStore'
+import { useEffect } from 'react'
 
 const MyPage = () => {
   const token = useLoginStore((state) => state.token)
   const logout = useLoginStore((state) => state.logout)
+  console.log(token)
+  const reservations = useReservationStore((state)=> state.reservations)
+  const fetchReservations = useReservationStore((state)=> state.fetchReservations)
+
+  useEffect(()=>{
+    fetchReservations("https://api.mediehuset.net/detutroligeteater/reservations", token.access_token)
+    console.log(reservations)
+  }, [token])
   return (
     <section className='my-page'>
       {
