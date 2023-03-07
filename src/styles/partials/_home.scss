@@ -117,3 +117,40 @@
         margin-left: auto;
     }
 }
+
+@media only screen and (max-width: 1000px) {
+    .event-header{
+        position: relative;
+        width: 400vw;
+        margin-bottom: 10vw;
+        
+        .header-info{
+            display: none;
+            
+        }
+        img{
+            width: 100%;
+            object-position: top;
+        }
+    }
+    .card-section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .event-card{
+            width: 50%;
+            img{
+                height: 30vw;
+            }
+            .card-info{
+                text-align: center;
+                }
+            .buttons{
+                justify-content: center !important;
+                p{
+                    font-size: 3vw;
+                }
+            }
+        }
+    }
+  }
