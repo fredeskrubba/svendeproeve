@@ -5,7 +5,7 @@ import Actors from "./pages/Actors";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
-import MyPage from "./pages/MyPage";
+import MyPage from "./pages/myPage/MyPage";
 import "./styles/output.css";
 
 function App() {

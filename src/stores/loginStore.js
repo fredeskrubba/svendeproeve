@@ -2,6 +2,7 @@ import { create } from 'zustand'
 
 export const useLoginStore = create((set) => ({
     loggedIn: false,
+    name: "",
     token: "",
     fetchLogin: async (endpoint, username, password) => {
         const response = await fetch(endpoint, {
@@ -14,9 +15,9 @@ export const useLoginStore = create((set) => ({
                 password: `${password}`
             })
         })
-        set({ token: await response.json() })
+        set({ token: await response.json()})
         set({loggedIn: true})
       },
-    resetToken: ()=> set({token: ""})
+    logout: ()=> set({token: "", loggedIn: false})
     
 }))
