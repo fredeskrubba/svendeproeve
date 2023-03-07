@@ -3,6 +3,7 @@ import { useLoginStore } from '../../stores/loginStore'
 import {ReactComponent as TicketIcon} from "../../assets/icons/ticket.svg"
 import {ReactComponent as FavouriteIcon} from "../../assets/icons/favourite.svg"
 import {ReactComponent as StarIcon} from "../../assets/icons/star_1.svg"
+import EventBlock from './EventBlock'
 
 const MyPage = () => {
   const token = useLoginStore((state) => state.token)
@@ -33,6 +34,7 @@ const MyPage = () => {
               <p>PRIS</p>
               <p>REDIGER</p>
             </div>
+            <EventBlock/>
           </section>
 
           <section className='my-page-section'>
