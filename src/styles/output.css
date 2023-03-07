@@ -240,6 +240,40 @@ footer .icons {
   margin-left: auto;
 }
 
+@media only screen and (max-width: 1000px) {
+  .event-header {
+    position: relative;
+    width: 400vw;
+    margin-bottom: 10vw;
+  }
+  .event-header .header-info {
+    display: none;
+  }
+  .event-header img {
+    width: 100%;
+    object-position: top;
+  }
+  .card-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-section .event-card {
+    width: 50%;
+  }
+  .card-section .event-card img {
+    height: 30vw;
+  }
+  .card-section .event-card .card-info {
+    text-align: center;
+  }
+  .card-section .event-card .buttons {
+    justify-content: center !important;
+  }
+  .card-section .event-card .buttons p {
+    font-size: 3vw;
+  }
+}
 body {
   font-family: "Titillium Web", sans-serif;
   margin: 0;
