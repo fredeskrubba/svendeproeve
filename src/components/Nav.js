@@ -56,7 +56,13 @@ const Nav = () => {
               <ActiveLink href='/actors'>
                   SKUESPILLERE
               </ActiveLink>
-              <p onClick={()=>{loginVisible === "hide" ? setLoginVisible("show") : setLoginVisible("hide")}}>{loggedIn ? "MIN SIDE" : "LOGIN"}</p>
+              {loggedIn ? 
+                <ActiveLink href="/myPage">
+                  MIN SIDE
+                </ActiveLink>
+                : 
+                <p onClick={()=>{loginVisible === "hide" ? setLoginVisible("show") : setLoginVisible("hide")}}>LOGIN</p>
+              }
             </div>
           </section>
         </div>

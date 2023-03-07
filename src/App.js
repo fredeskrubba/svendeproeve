@@ -5,6 +5,7 @@ import Actors from "./pages/Actors";
 import Login from "./pages/Login";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import MyPage from "./pages/MyPage";
 import "./styles/output.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/events" component={Events}/>
       <Route path="/actors" component={Actors}/>
       <Route path="/login" component={Login}/>
+      <Route path="/myPage" component={MyPage}/>
       <Footer/>
     </div>
   );
