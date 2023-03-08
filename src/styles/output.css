@@ -600,6 +600,30 @@ footer .icons {
 .event-details .detail-header .price {
   font-size: 1vw;
 }
+.event-details .event-info {
+  display: flex;
+  justify-content: space-between;
+}
+.event-details .event-info .headline-container h1 {
+  margin: 0;
+  color: #d39d5b;
+  font-family: "Playfair Display", serif;
+  font-size: 5vw;
+  font-weight: 400;
+}
+.event-details .event-info .headline-container h3 {
+  margin: 0;
+  font-weight: 400;
+  font-size: 2vw;
+}
+.event-details .event-info p {
+  margin: 0;
+  background-color: #ad7a51;
+  color: white;
+  font-weight: 700;
+  padding: 1vw;
+  height: 1vw;
+}
 
 body {
   font-family: "Titillium Web", sans-serif;
