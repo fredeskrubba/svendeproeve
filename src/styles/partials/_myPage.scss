@@ -58,4 +58,19 @@
             }
         }
     }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            display: flex;
+            gap: 2vw;
+        }
+        svg{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
 }

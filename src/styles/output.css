@@ -377,6 +377,18 @@ footer .icons {
   font-weight: 700;
   color: #707070;
 }
+.my-page .block {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.my-page .block div {
+  display: flex;
+  gap: 2vw;
+}
+.my-page .block svg:hover {
+  cursor: pointer;
+}
 
 body {
   font-family: "Titillium Web", sans-serif;
