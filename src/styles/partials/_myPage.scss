@@ -1,0 +1,76 @@
+@use "./variables";
+
+.my-page{
+    border: 1px solid variables.$primary-color;
+    margin-top: 3vw;
+    padding: 2vw 3vw;
+    .hero{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2vw;
+        h1{
+            font-size: 4vw;
+            color: variables.$primary-color;
+            font-family: variables.$header-font;
+            font-weight: 400;
+            margin: 0;
+        }
+        .logout-cont{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 1vw;
+            p{
+                margin: 0;
+            }
+            .logout-button{
+                padding: 1vw;
+                color: white;
+                font-weight: 700;
+                width: 50%;
+                text-align: center;
+                background-color: variables.$secondary-color;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .my-page-section{
+        margin: 3VW 0;
+        .header{
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+            h2{
+                font-weight: 400;
+                color: #707070;
+            }
+        }
+        .info{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #DFDFDF;
+            p{
+                font-weight: 700;
+                color: #707070;
+            }
+        }
+    }
+
+    .block{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        div{
+            display: flex;
+            gap: 2vw;
+        }
+        svg{
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+}

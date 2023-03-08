@@ -3,7 +3,9 @@ import { Link, useRoute } from 'wouter'
 import navLogo from "../assets/img/nav-logo.png"
 import {ReactComponent as SearchIcon} from "../assets/icons/searchIcon.svg"
 import {ReactComponent as BurgerIcon} from "../assets/icons/burger-icon.svg"
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useLoginStore } from '../stores/loginStore'
+import {useLocation } from 'wouter'
 
 // link component that tracks the current active page
 const ActiveLink = props => {
@@ -17,6 +19,20 @@ const ActiveLink = props => {
 
 const Nav = () => {
   const [visible, setVisible] = useState("hide")
+  const[loginVisible, setLoginVisible] = useState("hide")
+  const login = useLoginStore((state)=> state.fetchLogin)
+  const loggedIn = useLoginStore((state)=>state.loggedIn)
+  const token = useLoginStore((state)=> state.token)
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
+  const [location, setLocation] = useLocation("login");
+
+  useEffect(()=>{
+    if(loggedIn){
+      setLocation("/mypage")
+      setLoginVisible("hide")
+    }
+  }, [token])
   return (
     <nav>
         <div className='desktop-bar'>
@@ -40,9 +56,13 @@ const Nav = () => {
               <ActiveLink href='/actors'>
                   SKUESPILLERE
               </ActiveLink>
-              <ActiveLink href='/login'>
-                  LOGIN
-              </ActiveLink>
+              {loggedIn ? 
+                <ActiveLink href="/myPage">
+                  MIN SIDE
+                </ActiveLink>
+                : 
+                <p onClick={()=>{loginVisible === "hide" ? setLoginVisible("show") : setLoginVisible("hide")}}>LOGIN</p>
+              }
             </div>
           </section>
         </div>
@@ -59,9 +79,19 @@ const Nav = () => {
               SKUESPILLERE
             </ActiveLink>
             <ActiveLink href="/login">
-              LOGIN
+              LOG IN
             </ActiveLink>
           </article>
+        </div>
+        <div className={`login-tab ${loginVisible}`}>
+                <div>
+                  <input type="text" onChange={(e)=>setUsername(e.target.value)}/>
+                  <input type="password" onChange={(e)=>setPassword(e.target.value)}/>
+                </div>
+                <p className='login-button' onClick={()=>{
+                login("https://api.mediehuset.net/token", username, password)
+                console.log(token)
+                }}>Login</p>
         </div>
     </nav>
   )

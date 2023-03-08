@@ -2,6 +2,7 @@
 @use "./partials/nav";
 @use "./partials/footer";
 @use "./partials/home";
+@use "./partials/myPage";
 
 body{
     font-family: variables.$main-font;
