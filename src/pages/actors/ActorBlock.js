@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'wouter'
 
 
 const ActorBlock = ({actor}) => {
@@ -10,7 +11,9 @@ const ActorBlock = ({actor}) => {
             <h2>{actor.name}</h2>
             <p>{actor.description}</p>
         </div>
-        <p className='read-more'>LÆS MERE</p>
+        <Link href={`actors/${actor.id}`}>
+            <p className='read-more'>LÆS MERE</p>
+        </Link>
     </section>
   )
 }

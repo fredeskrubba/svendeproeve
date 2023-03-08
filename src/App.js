@@ -7,6 +7,7 @@ import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import MyPage from "./pages/myPage/MyPage";
 import "./styles/output.css";
+import ActorDetails from "./pages/actors/ActorDetails";
 
 function App() {
 
@@ -18,6 +19,11 @@ function App() {
       <Route path="/actors" component={Actors}/>
       <Route path="/login" component={Login}/>
       <Route path="/myPage" component={MyPage}/>
+      <Route path="/actors/:id">
+        {(params) =>{
+          return <ActorDetails id={params.id}/>
+        }}
+      </Route>
       <Footer/>
     </div>
   );
