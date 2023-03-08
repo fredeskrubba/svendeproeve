@@ -1,24 +1,34 @@
 import React from 'react'
 import { Link } from 'wouter'
+import {useActorStore} from "../../stores/actorStore"
+import { useEffect } from 'react'
 
-const ActorDetails = ({id, img, name, info}) => {
-    console.log(id)
+const ActorDetails = ({id}) => {
+    const details = useActorStore((state)=> state.actorDetails)
+    const getDetails = useActorStore((state)=> state.fetchActorDetails)
+    
+    useEffect(()=>{
+        getDetails(`https://api.mediehuset.net/detutroligeteater/actors/${id}`)
+        console.log(details)
+    }, [])
   return (
+    details !== "" ? 
     <section className='actor-details'>
         <div>
-            <h2>Skuespillere</h2>
-            <section>
-                <img src={img} alt="actor-img" />
+            <h2 className='header'>Skuespillere</h2>
+            <section className='actor-container'>
+                <img src={details.item.image} alt="actor-img" />
                 <article>
-                    <h2>{name}</h2>
-                    <p>{info}</p>
+                    <h2>{details.item.name}</h2>
+                    <p>{details.item.description}</p>
                 </article>
             </section>
         </div>
-        <Link href='/actors'>
-            <p>ALLE SKUESPILLERE</p>
+        <Link href='/actors' >
+            <p className='back-button'>ALLE SKUESPILLERE</p>
         </Link>
-    </section>
+    </section> : null
+    
   )
 }
 
