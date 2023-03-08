@@ -12,4 +12,13 @@ export const useActorStore = create((set) => ({
         })
         set({ actors: await response.json()})
       },
+    fetchActorDetails: async (endpoint) => {
+        const response = await fetch(endpoint, {
+            method: "GET",
+            headers: {
+                'Content-Type': 'application/json'
+              },
+        })
+        set({ actorDetails: await response.json()})
+      },
 }))

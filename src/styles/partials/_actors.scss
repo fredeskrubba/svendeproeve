@@ -55,3 +55,45 @@
         }
     }
 }
+
+.actor-details{
+    margin-top: 4vw;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2vw;
+    div{
+        border: 1px solid variables.$primary-color;
+        padding: 1vw 2vw;
+        .header{
+            font-family: variables.$header-font;
+            color: variables.$primary-color;
+        }
+        h2{
+            font-weight: 400;
+            font-size: 4vw;
+            margin: 0;
+        }
+        .actor-container{
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            margin-top: 2vw;
+            gap: 3vw;
+        }
+
+        article{
+            p{
+                color: variables.$primary-color;
+            }
+        }
+    }
+    .back-button{
+        background-color: variables.$secondary-color;
+        color: white;
+        padding: 1vw 2vw;
+        font-weight: 700;
+        align-self: flex-end;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
