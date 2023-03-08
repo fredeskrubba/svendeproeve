@@ -1,0 +1,56 @@
+@use "./variables";
+
+.actors{
+    border: 1px solid variables.$primary-color;
+    margin-top: 3vw;
+    padding: 1vw 3vw;
+    h1{
+        font-weight: 400;
+        font-family: variables.$header-font;
+        color: variables.$primary-color;
+        font-size: 4vw;
+    }
+    .actors-container{
+        display: flex;
+        flex-direction: column;
+        gap: 5vw;
+        .actor-block{
+            display: grid;
+            grid-template-columns: 1fr 4fr 1fr;
+            align-items: center;
+            gap: 2vw;
+            height: 20vw;
+            border-bottom: 1px solid #DFDFDF;
+            padding-bottom: 2vw;
+            img{
+                width: 20vw;
+                height: 100%;
+            }
+            .actor-info{
+                text-overflow: ellipsis;
+                overflow: hidden;
+                height: 100%;
+                h2{
+                    font-weight: 400;
+                    margin: 0;
+                }
+                p{
+                    color: variables.$primary-color;
+                    margin: 0;
+                }
+            }
+            .read-more{
+                background-color: variables.$tertiary-color;
+                color: white;
+                padding: 1vw;
+                text-align: center;
+                font-weight: 700;
+                align-self: flex-end;
+                margin: 0;
+                &:hover{
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+}

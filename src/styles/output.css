@@ -390,6 +390,61 @@ footer .icons {
   cursor: pointer;
 }
 
+.actors {
+  border: 1px solid #d39d5b;
+  margin-top: 3vw;
+  padding: 1vw 3vw;
+}
+.actors h1 {
+  font-weight: 400;
+  font-family: "Playfair Display", serif;
+  color: #d39d5b;
+  font-size: 4vw;
+}
+.actors .actors-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5vw;
+}
+.actors .actors-container .actor-block {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  align-items: center;
+  gap: 2vw;
+  height: 20vw;
+  border-bottom: 1px solid #DFDFDF;
+  padding-bottom: 2vw;
+}
+.actors .actors-container .actor-block img {
+  width: 20vw;
+  height: 100%;
+}
+.actors .actors-container .actor-block .actor-info {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  height: 100%;
+}
+.actors .actors-container .actor-block .actor-info h2 {
+  font-weight: 400;
+  margin: 0;
+}
+.actors .actors-container .actor-block .actor-info p {
+  color: #d39d5b;
+  margin: 0;
+}
+.actors .actors-container .actor-block .read-more {
+  background-color: #30454c;
+  color: white;
+  padding: 1vw;
+  text-align: center;
+  font-weight: 700;
+  align-self: flex-end;
+  margin: 0;
+}
+.actors .actors-container .actor-block .read-more:hover {
+  cursor: pointer;
+}
+
 body {
   font-family: "Titillium Web", sans-serif;
   margin: 0;

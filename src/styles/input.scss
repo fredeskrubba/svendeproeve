@@ -3,6 +3,7 @@
 @use "./partials/footer";
 @use "./partials/home";
 @use "./partials/myPage";
+@use "./partials/actors";
 
 body{
     font-family: variables.$main-font;
