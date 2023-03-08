@@ -119,4 +119,30 @@
             font-size: 1vw;
         }
     }
+    .event-info{
+        display: flex;
+        justify-content: space-between;
+        .headline-container{
+            h1{
+                margin: 0;
+                color: variables.$primary-color;
+                font-family: variables.$header-font;
+                font-size: 5vw;
+                font-weight: 400            ;
+            }
+            h3{
+                margin: 0;
+                font-weight: 400;
+                font-size: 2vw;
+            }
+        }
+        p{
+            margin: 0;
+            background-color: variables.$secondary-color;
+            color: white;
+            font-weight: 700;
+            padding: 1vw;
+            height: 1vw;
+        }
+    }
 }
