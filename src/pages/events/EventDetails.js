@@ -7,12 +7,14 @@ import {ReactComponent as FullStar} from "../../assets/icons/star-full.svg"
 import {ReactComponent as EmptyStar} from "../../assets/icons/star-empty.svg"
 import {ReactComponent as ReviewIcon} from "../../assets/icons/write-icon.svg"
 import { useLoginStore } from '../../stores/loginStore'
+import { useReviewStore } from '../../stores/reviewStore'
 
 const EventDetails = ({id}) => {
   const eventDetails = useEventsStore((state)=> state.eventDetails)
   const eventReviews = useEventsStore((state)=> state.reviews)
   const fetchEventDetails = useEventsStore((state)=> state.fetchEventDetails)
   const fetchEventReviews = useEventsStore((state)=> state.fetchEventReviews)
+  const postReview = useReviewStore((state)=> state.postReview)
 
   const [favourited, setFavourited] = useState(false)
   useEffect(()=>{
@@ -25,6 +27,8 @@ const EventDetails = ({id}) => {
   const token = useLoginStore((state)=> state.token)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  const [subject, setSubject] = useState("")
+  const [comment, setComment] = useState("")
   return (
     <section className='event-details'>
       {
@@ -82,7 +86,19 @@ const EventDetails = ({id}) => {
                 <ReviewIcon/>
                 <p>Skriv en anmeldelse</p>
               </div>
-              {loggedIn ? null :
+              {loggedIn ? 
+              
+                <section className='add-review'> 
+                 <p>Antal stjerner:</p>
+                 <div>
+                  <section className='form'>
+                      <input type="text" placeholder='Emne' onChange={(e)=>setSubject(e.target.value)}/>
+                      <textarea cols="30" rows="10" placeholder='Kommentar' onChange={(e)=>setComment(e.target.value)}/>
+                  </section>
+                  <p className='submit' onClick={()=>{postReview("https://api.mediehuset.net/detutroligeteater/reviews", token.access_token, eventDetails.item.id, subject, comment, 3)}}>SEND</p>
+                 </div>
+                </section>
+               :
               <div>
                 <p className='login-header'>Du skal være logget ind for at skrive en anmeldelse</p>
                 <section className={`login-tab`}>

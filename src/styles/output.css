@@ -571,6 +571,7 @@ footer .icons {
   margin-top: 3vw;
   border: 1px solid #d39d5b;
   box-sizing: border-box;
+  margin-bottom: 5vw;
 }
 .event-details div img {
   width: 100%;
@@ -707,6 +708,47 @@ footer .icons {
   display: flex;
   align-items: center;
   gap: 1vw;
+}
+.event-details .write-review .add-review div {
+  display: grid;
+  grid-template-columns: 8fr 1fr;
+}
+.event-details .write-review .add-review div .form {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+.event-details .write-review .add-review div .form input {
+  padding: 1vw;
+  border-radius: 5px;
+  border: none;
+}
+.event-details .write-review .add-review div .form input:focus {
+  outline: none;
+}
+.event-details .write-review .add-review div .form input::placeholder {
+  font-family: "Titillium Web", sans-serif;
+}
+.event-details .write-review .add-review div .form textarea {
+  border-radius: 5px;
+  padding: 1vw;
+  border: none;
+  resize: none;
+}
+.event-details .write-review .add-review div .form textarea:focus {
+  outline: none;
+}
+.event-details .write-review .add-review div .form textarea::placeholder {
+  font-family: "Titillium Web", sans-serif;
+}
+.event-details .write-review .add-review div .submit {
+  background-color: #d39d5b;
+  justify-self: flex-end;
+  align-self: flex-end;
+  margin: 0;
+  padding: 0.7vw 2vw;
+  border-radius: 5px;
+  font-weight: 700;
 }
 .event-details .write-review .login-header {
   margin: 0;
