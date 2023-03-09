@@ -15,7 +15,9 @@ const EventBar = ({img, name, scene, dato, id}) => {
             <Link href={`events/${id}`}>
                 <p className='read'>LÆS MERE</p>
             </Link>
-            <p className='buy'>KØB BILLET</p>
+            <Link href={`tickets/${id}`}>
+              <p className='buy'>KØB BILLET</p>
+            </Link>
         </div>
     </section>
   )

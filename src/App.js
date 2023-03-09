@@ -9,6 +9,7 @@ import MyPage from "./pages/myPage/MyPage";
 import "./styles/output.css";
 import ActorDetails from "./pages/actors/ActorDetails";
 import EventDetails from "./pages/events/EventDetails";
+import BuyTicket from "./pages/buyTicket/BuyTicket";
 
 function App() {
 
@@ -28,6 +29,11 @@ function App() {
       <Route path="/events/:id">
         {(params) =>{
           return <EventDetails id={params.id}/>
+        }}
+      </Route>
+      <Route path="/tickets/:id">
+        {(params) =>{
+          return <BuyTicket id={params.id}/>
         }}
       </Route>
       <Footer/>
