@@ -3,16 +3,28 @@ import { useEffect, useState} from 'react'
 import { useEventsStore } from '../../stores/eventsStore'
 import {ReactComponent as EmptyHeart} from "../../assets/icons/empty-heart.svg"
 import {ReactComponent as FullHeart} from "../../assets/icons/full-heart.svg"
+import {ReactComponent as FullStar} from "../../assets/icons/star-full.svg"
+import {ReactComponent as EmptyStar} from "../../assets/icons/star-empty.svg"
+import {ReactComponent as ReviewIcon} from "../../assets/icons/write-icon.svg"
+import { useLoginStore } from '../../stores/loginStore'
 
 const EventDetails = ({id}) => {
   const eventDetails = useEventsStore((state)=> state.eventDetails)
+  const eventReviews = useEventsStore((state)=> state.reviews)
   const fetchEventDetails = useEventsStore((state)=> state.fetchEventDetails)
+  const fetchEventReviews = useEventsStore((state)=> state.fetchEventReviews)
 
   const [favourited, setFavourited] = useState(false)
   useEffect(()=>{
     fetchEventDetails(`https://api.mediehuset.net/detutroligeteater/events/${id}`)
-    console.log(eventDetails)
+    fetchEventReviews(`https://api.mediehuset.net/detutroligeteater/reviews`)
   },[])
+
+  const login = useLoginStore((state)=> state.fetchLogin)
+  const loggedIn = useLoginStore((state)=>state.loggedIn)
+  const token = useLoginStore((state)=> state.token)
+  const [username, setUsername] = useState("")
+  const [password, setPassword] = useState("")
   return (
     <section className='event-details'>
       {
@@ -35,6 +47,55 @@ const EventDetails = ({id}) => {
                 <h3>{eventDetails.item.genre}</h3>
               </div>
               <p>KØB BILLET</p>
+            </section>
+            <section className='description'>
+              <p>{eventDetails.item.description}</p>
+              <p>{`Varighed ca. ${eventDetails.item.duration_minutes} minutter`}</p>
+            </section>
+            <section className='featuring'>
+              <h2>MEDVIRKENDE</h2>
+              <div className="actor-grid">
+                {eventDetails.item.actors.slice(0,5).map((actor)=>{
+                  return <section key={actor.id}>
+                    <img src={actor.image} alt="actor" />
+                    <h2>{actor.name}</h2>
+                  </section>
+                })}
+              </div>
+            </section>
+            <section className="reviews">
+              <h2>ANMELDELSER</h2>
+              { eventReviews !== "" ? eventReviews.items.slice(0,2).map((review)=>{
+                return <section className='review' key={review.id}> 
+                  <div className='stars'>
+                    {Array(parseInt(review.num_stars)).fill(<FullStar />)}
+                    {Array(5 - parseInt(review.num_stars)).fill(<EmptyStar />)}
+                  </div>
+                  <p className='created'>{review.created}</p>
+                  <h2 className='user'>{`${review.user.firstname} ${review.user.lastname}`}</h2>
+                  <p className="comment"> {review.comment}</p>
+                </section>
+              }) : null}
+            </section>
+            <section className="write-review">
+              <div className="header">
+                <ReviewIcon/>
+                <p>Skriv en anmeldelse</p>
+              </div>
+              {loggedIn ? null :
+              <div>
+                <p className='login-header'>Du skal være logget ind for at skrive en anmeldelse</p>
+                <section className={`login-tab`}>
+                                <div>
+                                  <input type="text" onChange={(e)=>setUsername(e.target.value)}/>
+                                  <input type="password" onChange={(e)=>setPassword(e.target.value)}/>
+                                </div>
+                                <p className='login-button' onClick={()=>{
+                                login("https://api.mediehuset.net/token", username, password)
+                                }}>Login</p>
+                        </section>
+              </div> }
+              
             </section>
           </div> 
           

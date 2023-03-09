@@ -569,6 +569,8 @@ footer .icons {
 
 .event-details {
   margin-top: 3vw;
+  border: 1px solid #d39d5b;
+  box-sizing: border-box;
 }
 .event-details div img {
   width: 100%;
@@ -587,6 +589,7 @@ footer .icons {
   justify-content: space-between;
   color: #707070;
   border-bottom: 1px solid #dfdfdf;
+  padding: 1vw;
 }
 .event-details .detail-header .place-container p {
   margin: 0;
@@ -603,6 +606,9 @@ footer .icons {
 .event-details .event-info {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 1vw;
+  padding: 1vw;
 }
 .event-details .event-info .headline-container h1 {
   margin: 0;
@@ -615,6 +621,7 @@ footer .icons {
   margin: 0;
   font-weight: 400;
   font-size: 2vw;
+  color: #30454c;
 }
 .event-details .event-info p {
   margin: 0;
@@ -622,7 +629,117 @@ footer .icons {
   color: white;
   font-weight: 700;
   padding: 1vw;
-  height: 1vw;
+}
+.event-details .description {
+  padding: 1vw;
+}
+.event-details .description p {
+  color: #d39d5b;
+  font-size: 2vw;
+}
+.event-details .featuring {
+  border-bottom: 1px dashed #d39d5b;
+  padding: 0 1vw 8vw 1vw;
+}
+.event-details .featuring h2 {
+  font-size: 3vw;
+  font-weight: 400;
+  color: #707070;
+}
+.event-details .featuring .actor-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2vw;
+  height: 100%;
+}
+.event-details .featuring .actor-grid section {
+  height: 15vw;
+}
+.event-details .featuring .actor-grid section img {
+  border: none;
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+.event-details .featuring .actor-grid section h2 {
+  color: #d39d5b;
+  font-size: 1.3vw;
+  text-align: center;
+  border: 1px solid #d39d5b;
+  margin: 0;
+  padding: 1vw;
+  height: 4vw;
+}
+.event-details .reviews {
+  padding: 1vw;
+}
+.event-details .reviews h2 {
+  color: #707070;
+  padding: 1vw 0;
+  font-weight: 400;
+  border-bottom: #DFDFDF 1px solid;
+}
+.event-details .reviews .review {
+  border-bottom: 1px solid #DFDFDF;
+  margin-bottom: 1vw;
+}
+.event-details .reviews .review .created {
+  margin: 0;
+  font-size: 1vw;
+}
+.event-details .reviews .review .user {
+  margin: 0;
+  border: none;
+  padding: 0;
+  font-weight: 700;
+}
+.event-details .reviews .review .comment {
+  margin: 0;
+  margin: 1vw 0;
+  color: #d39d5b;
+}
+.event-details .write-review {
+  padding: 1vw;
+  background-color: #ad7a51;
+  color: white;
+}
+.event-details .write-review .header {
+  display: flex;
+  align-items: center;
+  gap: 1vw;
+}
+.event-details .write-review .login-header {
+  margin: 0;
+  margin-left: 2vw;
+}
+.event-details .write-review .login-tab {
+  gap: 1vw;
+  padding: 2vw;
+  display: flex;
+}
+.event-details .write-review .login-tab div {
+  display: flex;
+  gap: 1vw;
+  flex-direction: column;
+}
+.event-details .write-review .login-tab div input {
+  height: 1.7vw;
+  border: none;
+}
+.event-details .write-review .login-tab div input:focus {
+  outline: none;
+  border: none;
+}
+.event-details .write-review .login-tab .login-button {
+  background-color: #61E692;
+  align-items: center;
+  align-self: flex-end;
+  color: white;
+  padding: 0.5vw 1vw;
+  margin: 0;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  font-size: 1vw;
 }
 
 body {
