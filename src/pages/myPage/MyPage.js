@@ -8,16 +8,20 @@ import FavouritesBlock from './FavouritesBlock'
 import ReviewBlock from './ReviewBlock'
 import { useReservationStore } from '../../stores/reservationStore'
 import { useEffect } from 'react'
+import { useFavouriteStore } from '../../stores/favouriteStore'
 
 const MyPage = () => {
   const token = useLoginStore((state) => state.token)
   const logout = useLoginStore((state) => state.logout)
   const reservations = useReservationStore((state)=> state.reservations)
   const fetchReservations = useReservationStore((state)=> state.fetchReservations)
+  const fetchFavourites = useFavouriteStore((state)=> state.fetchFavourites)
+  const favourites = useFavouriteStore((state)=> state.favourites)
 
   useEffect(()=>{
     fetchReservations("https://api.mediehuset.net/detutroligeteater/reservations", token.access_token)
-    console.log(reservations)
+    fetchFavourites("https://api.mediehuset.net/detutroligeteater/favorites", token.access_token)
+    
   }, [token])
   return (
     <section className='my-page'>
@@ -57,7 +61,9 @@ const MyPage = () => {
               <p>FORESTILLING</p>
               <p>REDIGER</p>
             </div>
-            <FavouritesBlock name={"NORDKRAFT, STORSCENEN"}/>
+            {favourites !== "" ? favourites.items.map((favourite)=>{
+              return <FavouritesBlock name={favourite.title} key={favourite.event_id} token={token.access_token} eventId={favourite.event_id}/>
+            }) : null}
           </section>
 
           <section className='my-page-section'>
