@@ -8,6 +8,7 @@ import {ReactComponent as EmptyStar} from "../../assets/icons/star-empty.svg"
 import {ReactComponent as ReviewIcon} from "../../assets/icons/write-icon.svg"
 import { useLoginStore } from '../../stores/loginStore'
 import { useReviewStore } from '../../stores/reviewStore'
+import { useFavouriteStore } from '../../stores/favouriteStore'
 
 const EventDetails = ({id}) => {
   const eventDetails = useEventsStore((state)=> state.eventDetails)
@@ -25,6 +26,7 @@ const EventDetails = ({id}) => {
   const login = useLoginStore((state)=> state.fetchLogin)
   const loggedIn = useLoginStore((state)=>state.loggedIn)
   const token = useLoginStore((state)=> state.token)
+  const addFavourite = useFavouriteStore((state)=> state.addFavourite)
   const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
   const [subject, setSubject] = useState("")
@@ -35,7 +37,12 @@ const EventDetails = ({id}) => {
         eventDetails !== "" ? 
           <div>
             <img src={eventDetails.item.image_large} alt="event-img" />
-            {favourited ? <FullHeart onClick={()=>{setFavourited(!favourited)}} className="heart-icon"/> : <EmptyHeart onClick={()=>{setFavourited(!favourited)}} className="heart-icon"/>}
+            {favourited ? <FullHeart onClick={()=>{
+              setFavourited(!favourited)
+              }} className="heart-icon"/> : <EmptyHeart onClick={()=>{
+                setFavourited(!favourited)
+                addFavourite("https://api.mediehuset.net/detutroligeteater/favorites", token.access_token, eventDetails.item.id)
+              }} className="heart-icon"/>}
             <article className="detail-header">
               <div className='place-container'>
                 <p className='stage'>{eventDetails.item.stage_name}</p>
