@@ -2,7 +2,9 @@ import React from 'react'
 
 const BuyTicket = () => {
   return (
-    <div>buyTicket</div>
+    <section className='buy-ticket'>
+
+    </section>
   )
 }
 

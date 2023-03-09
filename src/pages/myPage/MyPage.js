@@ -19,9 +19,7 @@ const MyPage = () => {
   const favourites = useFavouriteStore((state)=> state.favourites)
 
   useEffect(()=>{
-    fetchReservations("https://api.mediehuset.net/detutroligeteater/reservations", token.access_token)
     fetchFavourites("https://api.mediehuset.net/detutroligeteater/favorites", token.access_token)
-    
   }, [token])
   return (
     <section className='my-page'>
@@ -61,7 +59,7 @@ const MyPage = () => {
               <p>FORESTILLING</p>
               <p>REDIGER</p>
             </div>
-            {favourites !== "" ? favourites.items.map((favourite)=>{
+            {favourites.error !== "No records found!" ? favourites.items.map((favourite)=>{
               return <FavouritesBlock name={favourite.title} key={favourite.event_id} token={token.access_token} eventId={favourite.event_id}/>
             }) : null}
           </section>
