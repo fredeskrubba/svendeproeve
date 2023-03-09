@@ -1,6 +1,8 @@
 import React from 'react'
+import { Link } from 'wouter'
 
-const EventBar = ({img, name, scene, dato}) => {
+
+const EventBar = ({img, name, scene, dato, id}) => {
   return (
     <section className='event-bar'>
         <img src={img} alt="event-img" />
@@ -10,7 +12,9 @@ const EventBar = ({img, name, scene, dato}) => {
             <p className='date'>{dato}</p>
         </div>
         <div className='button-cont'>
-            <p className='read'>LÆS MERE</p>
+            <Link href={`events/${id}`}>
+                <p className='read'>LÆS MERE</p>
+            </Link>
             <p className='buy'>KØB BILLET</p>
         </div>
     </section>

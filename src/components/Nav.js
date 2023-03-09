@@ -28,15 +28,12 @@ const Nav = () => {
   const [location, setLocation] = useLocation("login");
 
   useEffect(()=>{
-    if(loggedIn){
-      setLocation("/mypage")
-      setLoginVisible("hide")
-    }
+    setLoginVisible("hide")
   }, [token])
   return (
     <nav>
         <div className='desktop-bar'>
-          <Link href="/home">
+          <Link href="/">
             <section className='logo'>
               <img src={navLogo} alt="Nav-logo" />
             </section>
@@ -47,7 +44,7 @@ const Nav = () => {
               <SearchIcon/>
             </div>
             <div className='links'>
-              <ActiveLink href='/home'>
+              <ActiveLink href='/'>
                   FORSIDE
               </ActiveLink>
               <ActiveLink href='/events'>
@@ -69,7 +66,7 @@ const Nav = () => {
         <div className='mobile-bar'>
           <BurgerIcon onClick={()=>{visible === "hide" ? setVisible("show") : setVisible("hide")}}/>
           <article className={`links ${visible}`}>
-            <ActiveLink href="/home">
+            <ActiveLink href="/">
               FORSIDE
             </ActiveLink>
             <ActiveLink href="/events">
@@ -90,7 +87,9 @@ const Nav = () => {
                 </div>
                 <p className='login-button' onClick={()=>{
                 login("https://api.mediehuset.net/token", username, password)
-                console.log(token)
+                if(loggedIn){
+                  setLocation("/mypage")
+    }
                 }}>Login</p>
         </div>
     </nav>

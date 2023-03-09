@@ -21,7 +21,7 @@ const Events = () => {
         <h2>Oversigt</h2>
       </div>
       {events !== null ? events.items.map((event)=>{
-        return <EventBar img={event.image_small} name={event.title} scene={event.stage_name} dato={`${event.startdate} - ${event.stopdate}`} key={event.id}/>
+        return <EventBar img={event.image_small} name={event.title} scene={event.stage_name} dato={`${event.startdate} - ${event.stopdate}`} key={event.id} id={event.id}/>
       }) : null}
     </section>
   )

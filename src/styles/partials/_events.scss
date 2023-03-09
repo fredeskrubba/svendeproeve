@@ -82,3 +82,244 @@
             background-color: variables.$primary-color;
         }
 }
+
+.event-details{
+    margin-top: 3vw;
+    border: 1px solid variables.$primary-color;
+    box-sizing: border-box;
+    margin-bottom: 5vw;
+    div{
+        img{
+            width: 100%;
+            height: 40vw;
+            object-fit: cover;
+            border: 10px solid variables.$secondary-color;
+            box-sizing: border-box;
+        }
+        .heart-icon{
+            position: absolute;
+            right: 11vw;
+            top: 15vw;
+        }
+    }
+    .detail-header{
+        display: flex;
+        justify-content: space-between;
+        color: #707070;
+        border-bottom: 1px solid #dfdfdf;
+        padding: 1vw;
+        .place-container{
+            p{
+                margin: 0;
+            }
+            .stage{
+                font-weight: 700    ;
+            }
+            .date{
+                font-size: 1.5vw;
+            }
+        }
+        .price{
+            font-size: 1vw;
+        }
+    }
+    .event-info{
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 1vw;
+        padding: 1vw;
+        .headline-container{
+            h1{
+                margin: 0;
+                color: variables.$primary-color;
+                font-family: variables.$header-font;
+                font-size: 5vw;
+                font-weight: 400            ;
+            }
+            h3{
+                margin: 0;
+                font-weight: 400;
+                font-size: 2vw;
+                color: variables.$tertiary-color;
+            }
+        }
+        p{
+            margin: 0;
+            background-color: variables.$secondary-color;
+            color: white;
+            font-weight: 700;
+            padding: 1vw;
+        }
+    }
+
+    .description{
+        padding: 1vw;
+        p{
+            color: variables.$primary-color;
+            font-size: 2vw;
+        }
+    }
+
+    .featuring{
+        border-bottom: 1px dashed variables.$primary-color;
+        padding: 0 1vw 8vw 1vw;
+        h2{
+            font-size: 3vw;
+            font-weight: 400;
+            color: #707070;
+        }
+
+        .actor-grid{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 2vw;
+            height: 100%;
+            section{
+                height: 15vw;
+                
+                img{
+                    border: none;
+                    height: 100%;
+                    width: 100%;
+                    display: block;
+                }
+                h2{
+                    color: variables.$primary-color;
+                    font-size: 1.3vw;
+                    text-align: center;
+                    border: 1px solid variables.$primary-color;
+                    margin: 0;
+                    padding: 1vw;
+                    height: 4vw;
+                }
+            }
+        }
+    }
+
+    .reviews{
+        padding: 1vw;
+        h2{
+            color: #707070;
+            padding: 1vw 0;
+            font-weight: 400;
+            border-bottom: #DFDFDF 1px solid;
+        }
+        .review{
+            border-bottom: 1px solid #DFDFDF;
+            margin-bottom: 1vw;
+           .stars{
+
+           }
+
+           .created{
+                margin: 0;
+               font-size: 1vw;
+           }
+           .user{
+            margin: 0;
+            border: none;
+            padding: 0;
+            font-weight: 700;
+           }
+
+           .comment{
+            margin: 0;
+            margin: 1vw 0;
+            color: variables.$primary-color;
+           }
+        }
+    }
+
+    .write-review{
+        padding: 1vw;
+        background-color: variables.$secondary-color;
+        color: white;
+        .header{
+            display: flex;
+            align-items: center;
+            gap: 1vw;
+        }
+        .add-review{
+            
+            p{
+
+            }
+            div{
+                display: grid;
+                grid-template-columns: 8fr 1fr;
+                .form{
+                    display: flex;
+                    flex-direction: column;
+                    gap: 2vw;
+                    input{
+                        padding: 1vw;
+                        border-radius: 5px;
+                        border: none;
+                        &:focus{
+                            outline: none;
+                        }
+                        &::placeholder{
+                            font-family: variables.$main-font;
+                        }
+                    }
+                    textarea{
+                        border-radius: 5px;
+                        padding: 1vw;
+                        border: none;
+                        resize: none;
+                        &:focus{
+                            outline: none;
+                        }
+                        &::placeholder{
+                            font-family: variables.$main-font;
+                        }
+                    }
+                } 
+                
+                .submit{
+                    background-color: variables.$primary-color;
+                    justify-self: flex-end;
+                    align-self: flex-end;
+                    margin: 0;
+                    padding: 0.7vw 2vw;
+                    border-radius: 5px;
+                    font-weight: 700;
+                }  
+            }
+        }
+        .login-header{
+            margin: 0;
+            margin-left: 2vw;
+        }
+        .login-tab{
+            gap: 1vw;
+            padding: 2vw;
+            display: flex;
+            div{
+                display: flex;
+                gap: 1vw;
+                flex-direction: column;
+                input{
+                    height: 1.7vw;
+                    border: none;
+                    &:focus{
+                        outline: none;
+                        border: none;
+                    }
+                }
+            }
+            .login-button{
+                background-color: #61E692;
+                align-items: center;
+                align-self: flex-end;
+                color: white;
+                padding: 0.5vw 1vw;
+                margin: 0;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                font-size: 1vw;
+            }
+        }
+    }
+}

@@ -8,13 +8,14 @@ import Footer from "./components/Footer";
 import MyPage from "./pages/myPage/MyPage";
 import "./styles/output.css";
 import ActorDetails from "./pages/actors/ActorDetails";
+import EventDetails from "./pages/events/EventDetails";
 
 function App() {
 
   return (
     <div className="App">
       <Nav/>
-      <Route path="/home" component={Home}/>
+      <Route path="/" component={Home}/>
       <Route path="/events" component={Events}/>
       <Route path="/actors" component={Actors}/>
       <Route path="/login" component={Login}/>
@@ -22,6 +23,11 @@ function App() {
       <Route path="/actors/:id">
         {(params) =>{
           return <ActorDetails id={params.id}/>
+        }}
+      </Route>
+      <Route path="/events/:id">
+        {(params) =>{
+          return <EventDetails id={params.id}/>
         }}
       </Route>
       <Footer/>
