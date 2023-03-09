@@ -5,6 +5,7 @@
 @use "./partials/myPage";
 @use "./partials/actors";
 @use "./partials/events";
+@use "./partials/buyTicket";
 
 body{
     font-family: variables.$main-font;

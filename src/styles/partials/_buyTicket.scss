@@ -1,0 +1,65 @@
+@use "./variables";
+
+.buy-ticket{
+    .ticket-header{
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        box-sizing: border-box;
+        img{
+            width: 100%;
+            height: 100%;
+            border: 5px solid variables.$secondary-color;
+            display: block;
+            box-sizing: border-box;
+        }
+        .info{
+            border: 1px solid variables.$secondary-color;
+            display: flex;
+            flex-direction: column;
+            padding: 2vw;
+            h1{
+                font-size: 4vw;
+                color: variables.$primary-color;
+                font-family: variables.$header-font;
+                font-weight: 400;
+                border-bottom: 1px solid #dfdfdf;
+                margin: 0;
+                padding: 1vw 0;
+                text-align: end;
+            }
+            h2{
+                color: variables.$tertiary-color;
+                text-align: end;
+                margin: 2vw 0;
+                margin-bottom: 0;
+                font-size: 2vw;
+            }
+            .place{
+                text-align: end;
+                margin: 0;
+                font-size: 2vw;
+            }
+            .form{
+                display: flex;
+                flex-direction: column;
+                gap: 1vw;
+                margin-top: 3vw;
+                div{
+                    display: flex;
+                    gap: 2vw;
+                    input{
+                            border-radius: 5px;
+                            width: 100%;
+                            border: 1px solid #dfdfdf;
+                            padding: 1vw;
+                            box-sizing: border-box;
+                        }
+                }
+                .double-field{
+                    gap: 0;
+                    
+                }
+            }
+        }
+    }
+}
