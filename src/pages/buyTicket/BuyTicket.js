@@ -15,7 +15,7 @@ const BuyTicket = ({id}) => {
   const firstName = useFormStore((state) => state.firstName)
   const setFirstName = useFormStore((state) => state.setFirstName)
   const lastName = useFormStore((state) => state.lastName)
-  const setLastName = useFormStore((state) => state.setlastName)
+  const setLastName = useFormStore((state) => state.setLastName)
   const addressName = useFormStore((state) => state.addressName)
   const setAddressName = useFormStore((state) => state.setAddressName)
   const addressNumber = useFormStore((state) => state.addressNumber)
@@ -48,6 +48,14 @@ const BuyTicket = ({id}) => {
     fetchSeats(`https://api.mediehuset.net/detutroligeteater/seats/${id}`)
   },[])
 
+  const resetForm = () => {
+    setFirstName("")
+    setLastName("")
+    setAddressName("")
+    setAddressNumber(0)
+    setZip(0)
+    setCity("")
+  }
   return (
     <>
       {
@@ -112,12 +120,12 @@ const BuyTicket = ({id}) => {
               </div>
             </section>
             <p className='submit' onClick={()=>{
-              if(firstName === "" || lastName === ""){
-                alert(firstName + lastName)
+              if(firstName === "" || lastName === "" || addressName === "" || addressNumber === 0 || zip === 0 || city === ""){
+                alert("Please fill out every field")
+                
               } else {
                 setConfirm(1)}
               }
-              
             }>GODKEND BESTILLING</p>
         </div>
         
@@ -180,7 +188,10 @@ const BuyTicket = ({id}) => {
               </div>
             </section>
             <section className="submit-buttons">
-              <p onClick={()=>{setConfirm(0)}} className="submit">TILBAGE</p>
+              <p onClick={()=>{
+                resetForm()
+                setConfirm(0)
+                }} className="submit">TILBAGE</p>
               <p onClick={()=>{setConfirm(2)}} className="submit">GODKEND BESTILLING</p>
             </section>
           </div>

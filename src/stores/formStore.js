@@ -7,10 +7,10 @@ export const useFormStore = create((set) => ({
     addressNumber: 0,
     zip: 0,
     city: "",
-    setFirstName: (name) => set({firstName: name}),
-    setLastName: (name) => set({lastName: name}),
-    setAddressName: (name) => set({addressName: name}),
-    setAddressNumber: (number) => set({addressNumber: number}),
-    setZip: (number) => set({zip: number}),
-    setCity: (name) => set({city: name})
+    setFirstName: (firstName) => set({firstName: firstName}),
+    setLastName: (lastName) => set({lastName: lastName}),
+    setAddressName: (addressName) => set({addressName: addressName}),
+    setAddressNumber: (addressNumber) => set({addressNumber: addressNumber}),
+    setZip: (zip) => set({zip: zip}),
+    setCity: (city) => set({city: city})
 }))
