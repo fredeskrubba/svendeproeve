@@ -97,3 +97,27 @@
         }
     }
 }
+
+@media screen and (max-width: 800px) {
+    .actors{
+        margin: 2vw;
+    }
+    .actor-details{
+        
+        margin: 2vw;
+        
+        div{
+            
+            .actor-container{
+                display: block;
+                width: 100%;
+                img{
+                    width: 100%;
+                    height: 40vw;
+                    object-fit: contain;
+                }
+            }
+
+        }
+    }
+  }

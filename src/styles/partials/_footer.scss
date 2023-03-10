@@ -2,44 +2,61 @@
 
 footer{
     background-color: variables.$tertiary-color;
-    display: grid;
-    gap: 6vw;
     color: white;
-    grid-template-columns: 1fr 1fr 1fr 2fr;
     padding: 1.7vw 3vw;
     min-height: 20vw;
+    display: flex;
     
-    bottom: 0;
-    
-    section{
-        .last-para{
-            margin-top: 2vw;
+    .footer-links{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 6vw;
+
+        section{
+            .last-para{
+                margin-top: 2vw;
+            }
+            .service{
+                margin-bottom: 6vw;
+            }
         }
-        .service{
-            margin-bottom: 6vw;
+        h2{
+            margin: 0.3vw 0;
+            font-size: 1.5vw;
+            white-space: nowrap;
         }
-    }
-    h2{
-        margin: 0.3vw 0;
-        font-size: 1.5vw;
-        white-space: nowrap;
-    }
-    p{
-        margin: 0;
-        font-size: 1vw;
-        white-space: nowrap;
+        p{
+            margin: 0;
+            font-size: 1vw;
+            white-space: nowrap;
+        }
     }
     .icons{
         display: flex;
         gap: 2vw;
         justify-self: flex-end;
+        margin-left: 9vw;
     }
+    
 }
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 800px) {
     footer{
         box-sizing: border-box;
         width: 100%;
+        flex-direction: column;
+        display: flex;
+        align-items: centers;
+        gap: 2vw;
+        .footer-links{
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+        }
+        .icons{
+            margin-left: 0;
+            justify-content: center;
+        }
     }
   }

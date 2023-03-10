@@ -1,8 +1,12 @@
 @use "./variables";
 
+body{
+    padding-top: 15vw;
+}
 nav{
     .desktop-bar{
         display: none;
+        white-space: nowrap;
         .logo{
             p{
                 margin: 0;
@@ -70,8 +74,13 @@ nav{
         flex-direction: column;
         align-items: flex-end;
         background-color: variables.$primary-color;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
         svg{
-            max-width: 12vw;
+            max-width: 8vw;
+            margin-right: 3vw;
             &:hover{
                 cursor: pointer;
             }
@@ -134,7 +143,8 @@ nav{
     }
 }
 
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 800px) {
+    
     nav{
         .desktop-bar{
             display: flex;
