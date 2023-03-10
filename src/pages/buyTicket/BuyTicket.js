@@ -2,6 +2,7 @@ import React from 'react'
 import { useEventsStore } from '../../stores/eventsStore'
 import { useEffect, useState } from 'react'
 import { useSeatStore } from '../../stores/seatStore'
+import { useFormStore } from '../../stores/formStore'
 
 const BuyTicket = ({id}) => {
   const eventDetails = useEventsStore((state)=> state.eventDetails)
@@ -11,12 +12,18 @@ const BuyTicket = ({id}) => {
   const [amount, setAmount] = useState(0)
   const [confirm, setConfirm] = useState(0)
 
-  const [firstName, setFirstname] = useState("")
-  const [lastName, setLastname] = useState("")
-  const [adressName, setAdressName] = useState("")
-  const [adressNumber, setAdressNumber] = useState(0)
-  const [zip, setZip] = useState(0)
-  const [city, setCity] = useState("")
+  const firstName = useFormStore((state) => state.firstName)
+  const setFirstName = useFormStore((state) => state.setFirstName)
+  const lastName = useFormStore((state) => state.lastName)
+  const setLastName = useFormStore((state) => state.setlastName)
+  const addressName = useFormStore((state) => state.addressName)
+  const setAddressName = useFormStore((state) => state.setAddressName)
+  const addressNumber = useFormStore((state) => state.addressNumber)
+  const setAddressNumber = useFormStore((state) => state.setAddressNumber)
+  const zip = useFormStore((state) => state.zip)
+  const setZip = useFormStore((state) => state.setZip)
+  const city = useFormStore((state) => state.city)
+  const setCity = useFormStore((state) => state.setCity)
 
   const chosenSeats = [
     {
@@ -56,24 +63,24 @@ const BuyTicket = ({id}) => {
                   <section className="form">
                     <div className='field'>
                       <p>FORNAVN</p>
-                      <input type="text" onchange={(e)=>{setFirstname(e.target.value)}}/>
+                      <input type="text" onChange={(e)=>{setFirstName(e.target.value)}}/>
                     </div>
                     <div className='field'>
                       <p>EFTERNAVN</p>
-                      <input type="text" onchange={(e)=>{setLastname(e.target.value)}}/>
+                      <input type="text" onChange={(e)=>{setLastName(e.target.value)}}/>
                     </div>
                     <div className='field'>
                       <p>VEJNAVN & NR</p>
                       <div className="double-field">
-                        <input type="text" className='double-field-1' onchange={(e)=>{setAdressName(e.target.value)}}/>
-                        <input type="text" className='double-field-2' onchange={(e)=>{setAdressNumber(e.target.value)}}/>
+                        <input type="text" className='double-field-1' onChange={(e)=>{setAddressName(e.target.value)}}/>
+                        <input type="text" className='double-field-2' onChange={(e)=>{setAddressNumber(e.target.value)}}/>
                       </div>
                     </div>
                     <div className='field'>
                       <p>POSTNR & BY</p>
                       <div className="double-field">
-                        <input type="text" className='double-field-1' onchange={(e)=>{setZip(e.target.value)}}/>
-                        <input type="text" className='double-field-2' onchange={(e)=>{setCity(e.target.value)}}/>
+                        <input type="text" className='double-field-1' onChange={(e)=>{setZip(e.target.value)}}/>
+                        <input type="text" className='double-field-2' onChange={(e)=>{setCity(e.target.value)}}/>
                       </div>
                     </div>
                   </section>
@@ -154,9 +161,10 @@ const BuyTicket = ({id}) => {
                     <p className='vat'>PRISER INKL. MOMS & BILLETGEBYR</p>
                   </div>
                   <article className='customer'>
+                    
                     <h2>KUNDE:</h2>
                     <p>{`${firstName} ${lastName}`}</p>
-                    <p>{`${adressName} ${adressNumber}`}</p>
+                    <p>{`${addressName} ${addressNumber}`}</p>
                     <p>{`${zip} ${city}`}</p>
                     <p>EMAIL:</p>
                     <h2 className='email-notif'>BILLETERNE SENDES ELEKTRONISK TIL DIN EMAIL</h2>
