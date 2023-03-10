@@ -1,22 +1,33 @@
 @use "./variables";
 
+.container{
+    display: flex;
+    flex-direction: column;
+}
 .buy-ticket{
+    border: 1px solid variables.$secondary-color;
+    margin-top: 2vw;
+
     .ticket-header{
         display: grid;
         grid-template-columns: 1fr 3fr;
         box-sizing: border-box;
+        border-bottom: 1px dashed variables.$primary-color;
+        padding-bottom: 2vw;
         img{
             width: 100%;
             height: 100%;
             border: 5px solid variables.$secondary-color;
             display: block;
             box-sizing: border-box;
+            object-fit: cover;
+            object-position: -100px;
         }
         .info{
-            border: 1px solid variables.$secondary-color;
             display: flex;
             flex-direction: column;
             padding: 2vw;
+            color: #707070;
             h1{
                 font-size: 4vw;
                 color: variables.$primary-color;
@@ -28,7 +39,7 @@
                 text-align: end;
             }
             h2{
-                color: variables.$tertiary-color;
+                color: #707070;
                 text-align: end;
                 margin: 2vw 0;
                 margin-bottom: 0;
@@ -39,27 +50,132 @@
                 margin: 0;
                 font-size: 2vw;
             }
+            
             .form{
                 display: flex;
                 flex-direction: column;
+                width: 100%;
                 gap: 1vw;
                 margin-top: 3vw;
-                div{
+                .field{
                     display: flex;
-                    gap: 2vw;
-                    input{
-                            border-radius: 5px;
-                            width: 100%;
-                            border: 1px solid #dfdfdf;
-                            padding: 1vw;
-                            box-sizing: border-box;
-                        }
-                }
-                .double-field{
-                    gap: 0;
+                    width: 100%;
+                    justify-content: space-between;
+                    white-space: nowrap;
                     
+                    input{
+                        width: 85%;
+                        border-radius: 5px;
+                        border: #707070 1px solid;
+                        box-sizing: border-box;
+                        padding: 1vw;
+                        color: variables.$primary-color;
+                        &:focus{
+                            outline: none;
+                            color: variables.$primary-color;
+                        }
+                    }
+                    .double-field{
+                        display: flex;
+                        gap: 0;
+                        width: 85%;
+                        .double-field-1{
+                            border-top-right-radius: 0;
+                            border-bottom-right-radius: 0;
+                            border-right: none;
+                            width: 100%;
+                        }
+                        .double-field-2{
+                            border-top-left-radius: 0;
+                            border-bottom-left-radius: 0;
+                            width: 100%;
+                        }
+                    }
+                }
+                
+            }
+            .subtext{
+                align-self: flex-end;
+                font-weight: 300;
+                font-size: 0.7vw;
+                margin: 0;
+            }
+            .amount{
+                display: flex;
+                gap: 0.5vw;
+                align-self: flex-end;
+                margin: 2vw 0;
+                align-items: center;
+                .amount-slider{
+                    display: flex;
+                    p{
+                        background-color: #DEDEDE;
+                        color: black;
+                        padding: 1vw;
+                        margin: 0;
+                    }
+                    .reduce{
+                        border-top-left-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                        cursor: pointer;
+                    }
+                    .num{
+                        background-color: #EEEEEE;
+                        width: 1vw;
+                        text-align: center;
+                    }
+                    .add{
+                        border-top-right-radius: 5px;
+                        border-bottom-right-radius: 5px;
+                        &:hover{
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .current-price{
+                    font-size: 1.5vw;
+                    margin: 0;
+                    color: black;
+                }
+                .tax{
+                    margin: 0;
                 }
             }
         }
     }
+    .seats{ 
+        padding: 2vw;
+        h2{
+            background-color: variables.$secondary-color;
+           color: white;
+           font-size: 2vw;
+           text-align: center;
+           margin: 0;
+        }
+        .seat-select{
+            margin-top: 1vw;
+            display: grid;
+            grid-template-columns: repeat(22, 1fr);
+            row-gap: 1vw;
+            justify-content: center;
+            align-items: center;
+            .seat{
+                height: 2vw;
+                width: 2vw;
+                border: 1px solid variables.$primary-color;
+                border-radius: 100%;
+                place-self: center;
+            }
+        }
+    }
+    text-align: center;
+}
+
+.submit{
+    background-color: variables.$secondary-color;
+    color: white;
+    padding: 1vw 2vw;
+    align-self: flex-end;
+    font-weight: 700;
+    margin-top: 2vw;
 }

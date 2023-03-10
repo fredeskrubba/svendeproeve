@@ -784,10 +784,22 @@ footer .icons {
   font-size: 1vw;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-ticket {
+  border: 1px solid #ad7a51;
+  margin-top: 2vw;
+  text-align: center;
+}
 .buy-ticket .ticket-header {
   display: grid;
   grid-template-columns: 1fr 3fr;
   box-sizing: border-box;
+  border-bottom: 1px dashed #d39d5b;
+  padding-bottom: 2vw;
 }
 .buy-ticket .ticket-header img {
   width: 100%;
@@ -795,12 +807,14 @@ footer .icons {
   border: 5px solid #ad7a51;
   display: block;
   box-sizing: border-box;
+  object-fit: cover;
+  object-position: -100px;
 }
 .buy-ticket .ticket-header .info {
-  border: 1px solid #ad7a51;
   display: flex;
   flex-direction: column;
   padding: 2vw;
+  color: #707070;
 }
 .buy-ticket .ticket-header .info h1 {
   font-size: 4vw;
@@ -813,7 +827,7 @@ footer .icons {
   text-align: end;
 }
 .buy-ticket .ticket-header .info h2 {
-  color: #30454c;
+  color: #707070;
   text-align: end;
   margin: 2vw 0;
   margin-bottom: 0;
@@ -827,22 +841,124 @@ footer .icons {
 .buy-ticket .ticket-header .info .form {
   display: flex;
   flex-direction: column;
+  width: 100%;
   gap: 1vw;
   margin-top: 3vw;
 }
-.buy-ticket .ticket-header .info .form div {
+.buy-ticket .ticket-header .info .form .field {
   display: flex;
-  gap: 2vw;
-}
-.buy-ticket .ticket-header .info .form div input {
-  border-radius: 5px;
   width: 100%;
-  border: 1px solid #dfdfdf;
-  padding: 1vw;
-  box-sizing: border-box;
+  justify-content: space-between;
+  white-space: nowrap;
 }
-.buy-ticket .ticket-header .info .form .double-field {
+.buy-ticket .ticket-header .info .form .field input {
+  width: 85%;
+  border-radius: 5px;
+  border: #707070 1px solid;
+  box-sizing: border-box;
+  padding: 1vw;
+  color: #d39d5b;
+}
+.buy-ticket .ticket-header .info .form .field input:focus {
+  outline: none;
+  color: #d39d5b;
+}
+.buy-ticket .ticket-header .info .form .field .double-field {
+  display: flex;
   gap: 0;
+  width: 85%;
+}
+.buy-ticket .ticket-header .info .form .field .double-field .double-field-1 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  width: 100%;
+}
+.buy-ticket .ticket-header .info .form .field .double-field .double-field-2 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100%;
+}
+.buy-ticket .ticket-header .info .subtext {
+  align-self: flex-end;
+  font-weight: 300;
+  font-size: 0.7vw;
+  margin: 0;
+}
+.buy-ticket .ticket-header .info .amount {
+  display: flex;
+  gap: 0.5vw;
+  align-self: flex-end;
+  margin: 2vw 0;
+  align-items: center;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider {
+  display: flex;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider p {
+  background-color: #DEDEDE;
+  color: black;
+  padding: 1vw;
+  margin: 0;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .reduce {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .num {
+  background-color: #EEEEEE;
+  width: 1vw;
+  text-align: center;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .add {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .add:hover {
+  cursor: pointer;
+}
+.buy-ticket .ticket-header .info .amount .current-price {
+  font-size: 1.5vw;
+  margin: 0;
+  color: black;
+}
+.buy-ticket .ticket-header .info .amount .tax {
+  margin: 0;
+}
+.buy-ticket .seats {
+  padding: 2vw;
+}
+.buy-ticket .seats h2 {
+  background-color: #ad7a51;
+  color: white;
+  font-size: 2vw;
+  text-align: center;
+  margin: 0;
+}
+.buy-ticket .seats .seat-select {
+  margin-top: 1vw;
+  display: grid;
+  grid-template-columns: repeat(22, 1fr);
+  row-gap: 1vw;
+  justify-content: center;
+  align-items: center;
+}
+.buy-ticket .seats .seat-select .seat {
+  height: 2vw;
+  width: 2vw;
+  border: 1px solid #d39d5b;
+  border-radius: 100%;
+  place-self: center;
+}
+
+.submit {
+  background-color: #ad7a51;
+  color: white;
+  padding: 1vw 2vw;
+  align-self: flex-end;
+  font-weight: 700;
+  margin-top: 2vw;
 }
 
 body {
