@@ -987,6 +987,9 @@ footer .icons {
   text-align: end;
   margin: 0;
 }
+.buy-ticket .ticket-header .confirm-info .customer {
+  text-align: start;
+}
 .buy-ticket .ticket-header .confirm-info .customer p {
   margin: 0;
 }
