@@ -798,8 +798,6 @@ footer .icons {
   display: grid;
   grid-template-columns: 1fr 3fr;
   box-sizing: border-box;
-  border-bottom: 1px dashed #d39d5b;
-  padding-bottom: 2vw;
 }
 .buy-ticket .ticket-header img {
   width: 100%;
@@ -808,7 +806,7 @@ footer .icons {
   display: block;
   box-sizing: border-box;
   object-fit: cover;
-  object-position: -100px;
+  object-position: center;
 }
 .buy-ticket .ticket-header .info {
   display: flex;
@@ -926,6 +924,78 @@ footer .icons {
 .buy-ticket .ticket-header .info .amount .tax {
   margin: 0;
 }
+.buy-ticket .ticket-header .confirm-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  color: #707070;
+  align-items: flex-start;
+}
+.buy-ticket .ticket-header .confirm-info h1 {
+  font-size: 4vw;
+  color: #d39d5b;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  border-bottom: 1px solid #dfdfdf;
+  margin: 0;
+  padding: 1vw 0;
+  text-align: end;
+  width: 100%;
+}
+.buy-ticket .ticket-header .confirm-info h2 {
+  color: #707070;
+  text-align: start;
+  margin: 2vw 0;
+  margin-bottom: 0;
+  font-size: 2vw;
+}
+.buy-ticket .ticket-header .confirm-info .event {
+  display: flex;
+  gap: 0.2vw;
+  margin: 0.5vw 0;
+}
+.buy-ticket .ticket-header .confirm-info .event p {
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .event .header {
+  font-weight: 700;
+}
+.buy-ticket .ticket-header .confirm-info .bill {
+  width: 100%;
+}
+.buy-ticket .ticket-header .confirm-info .bill .info-row {
+  font-weight: 700;
+}
+.buy-ticket .ticket-header .confirm-info .bill .bill-row {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5vw;
+  border-bottom: 1px solid #dfdfdf;
+}
+.buy-ticket .ticket-header .confirm-info .bill .bill-row section {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+.buy-ticket .ticket-header .confirm-info .bill .sum {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 3vw;
+  border-bottom: #707070 1px solid;
+}
+.buy-ticket .ticket-header .confirm-info .bill .vat {
+  text-align: end;
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .customer p {
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .customer h2 {
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .customer .email-notif {
+  font-weight: 400;
+}
 .buy-ticket .seats {
   padding: 2vw;
 }
@@ -959,6 +1029,29 @@ footer .icons {
   align-self: flex-end;
   font-weight: 700;
   margin-top: 2vw;
+}
+.submit:hover {
+  cursor: pointer;
+}
+
+.submit-buttons {
+  display: flex;
+  gap: 2vw;
+  align-self: flex-end;
+}
+
+.thanks {
+  border: 1px solid #d39d5b;
+  text-align: center;
+  margin-bottom: 13vw;
+  margin-top: 2vw;
+}
+.thanks h1 {
+  color: #d39d5b;
+  font-family: "Playfair Display", serif;
+  font-size: 4vw;
+  font-weight: 400;
+  padding-bottom: 5vw;
 }
 
 body {

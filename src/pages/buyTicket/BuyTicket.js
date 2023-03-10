@@ -9,6 +9,32 @@ const BuyTicket = ({id}) => {
   const fetchSeats = useSeatStore((state)=> state.fetchSeats)
   const seats = useSeatStore((state)=>state.seats)
   const [amount, setAmount] = useState(0)
+  const [confirm, setConfirm] = useState(0)
+
+  const [firstName, setFirstname] = useState("")
+  const [lastName, setLastname] = useState("")
+  const [adressName, setAdressName] = useState("")
+  const [adressNumber, setAdressNumber] = useState(0)
+  const [zip, setZip] = useState(0)
+  const [city, setCity] = useState("")
+
+  const chosenSeats = [
+    {
+      seat: 2,
+      row: 5,
+      price: 500
+    },
+    {
+      seat: 3,
+      row: 5,
+      price: 500
+    },
+    {
+      seat: 4,
+      row: 5,
+      price: 500
+    }
+  ]
 
   useEffect(()=>{
     fetchEventDetails(`https://api.mediehuset.net/detutroligeteater/events/${id}`)
@@ -18,7 +44,7 @@ const BuyTicket = ({id}) => {
   return (
     <>
       {
-        eventDetails !== "" ? 
+        eventDetails !== "" && confirm === 0 ? 
         <div className='container'>
           <section className='buy-ticket'>
               <div className="ticket-header">
@@ -30,24 +56,24 @@ const BuyTicket = ({id}) => {
                   <section className="form">
                     <div className='field'>
                       <p>FORNAVN</p>
-                      <input type="text" />
+                      <input type="text" onchange={(e)=>{setFirstname(e.target.value)}}/>
                     </div>
                     <div className='field'>
                       <p>EFTERNAVN</p>
-                      <input type="text" />
+                      <input type="text" onchange={(e)=>{setLastname(e.target.value)}}/>
                     </div>
                     <div className='field'>
                       <p>VEJNAVN & NR</p>
                       <div className="double-field">
-                        <input type="text" className='double-field-1'/>
-                        <input type="text" className='double-field-2'/>
+                        <input type="text" className='double-field-1' onchange={(e)=>{setAdressName(e.target.value)}}/>
+                        <input type="text" className='double-field-2' onchange={(e)=>{setAdressNumber(e.target.value)}}/>
                       </div>
                     </div>
                     <div className='field'>
                       <p>POSTNR & BY</p>
                       <div className="double-field">
-                        <input type="text" className='double-field-1'/>
-                        <input type="text" className='double-field-2'/>
+                        <input type="text" className='double-field-1' onchange={(e)=>{setZip(e.target.value)}}/>
+                        <input type="text" className='double-field-2' onchange={(e)=>{setCity(e.target.value)}}/>
                       </div>
                     </div>
                   </section>
@@ -78,12 +104,79 @@ const BuyTicket = ({id}) => {
                 <p>VÆLG SIDDEPLADSER</p>
               </div>
             </section>
-            <p className='submit'>GODKEND BESTILLING</p>
+            <p className='submit' onClick={()=>{setConfirm(1)}}>GODKEND BESTILLING</p>
         </div>
         
           : null
       }
-
+      {
+        eventDetails !== "" && confirm === 1 ? 
+        <div className='container'>
+          <section className='buy-ticket'>
+              <div className="ticket-header">
+                <img src={eventDetails.item.image} alt="ticket" />
+                <div className='confirm-info'>
+                  <h1>Godkend ordre</h1>
+                  <h2>PRODUKTER:</h2>
+                  <article className='event'>
+                    <p className='header'>FORESTILLING:</p>
+                    <p>{eventDetails.item.title}</p>
+                  </article>
+                  <article className='event'>
+                    <p className='header'>SCENE:</p>
+                    <p>{eventDetails.item.stage_name}</p>
+                  </article>
+                  <article className='event'>
+                    <p className='header'>DATO:</p>
+                    <p>{eventDetails.item.startdate}</p>
+                  </article>
+                  <div className='bill'>
+                    <article className='bill-row info-row'>
+                      <section>
+                        <p>SÆDE</p>
+                        <p>RÆKKE</p>
+                      </section>
+                      <p>PRIS</p>
+                    </article>
+                    {chosenSeats.map((seat)=>{
+                      return <article className='bill-row'>
+                        <section>
+                          <p>{seat.seat}</p>
+                          <p>{seat.row}</p>
+                        </section>
+                        <p>{seat.price}</p>
+                    </article>
+                    })}
+                    <article className='sum'>
+                      <p>PRIS I ALT:</p>
+                      <p>1500 DKK</p>
+                    </article>
+                    <p className='vat'>PRISER INKL. MOMS & BILLETGEBYR</p>
+                  </div>
+                  <article className='customer'>
+                    <h2>KUNDE:</h2>
+                    <p>{`${firstName} ${lastName}`}</p>
+                    <p>{`${adressName} ${adressNumber}`}</p>
+                    <p>{`${zip} ${city}`}</p>
+                    <p>EMAIL:</p>
+                    <h2 className='email-notif'>BILLETERNE SENDES ELEKTRONISK TIL DIN EMAIL</h2>
+                  </article>
+                </div>
+              </div>
+            </section>
+            <section className="submit-buttons">
+              <p onClick={()=>{setConfirm(0)}} className="submit">TILBAGE</p>
+              <p onClick={()=>{setConfirm(2)}} className="submit">GODKEND BESTILLING</p>
+            </section>
+          </div>
+      : null }
+      {
+        confirm === 2 ? 
+        <section className='thanks'>
+          <h1>Tak for din bestilling</h1>
+        </section>
+        : null
+      }
     </>
   )
 }
