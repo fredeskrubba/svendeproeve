@@ -111,7 +111,14 @@ const BuyTicket = ({id}) => {
                 <p>VÆLG SIDDEPLADSER</p>
               </div>
             </section>
-            <p className='submit' onClick={()=>{setConfirm(1)}}>GODKEND BESTILLING</p>
+            <p className='submit' onClick={()=>{
+              if(firstName === "" || lastName === ""){
+                alert(firstName + lastName)
+              } else {
+                setConfirm(1)}
+              }
+              
+            }>GODKEND BESTILLING</p>
         </div>
         
           : null

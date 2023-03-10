@@ -63,7 +63,7 @@
                     white-space: nowrap;
                     
                     input{
-                        width: 85%;
+                        width: 70%;
                         border-radius: 5px;
                         border: #707070 1px solid;
                         box-sizing: border-box;
@@ -77,7 +77,7 @@
                     .double-field{
                         display: flex;
                         gap: 0;
-                        width: 85%;
+                        width: 70%;
                         .double-field-1{
                             border-top-right-radius: 0;
                             border-bottom-right-radius: 0;
@@ -276,4 +276,32 @@
         font-weight: 400;
         padding-bottom: 5vw;
     }
+}
+
+@media screen and (max-width: 800px) {
+  .container{
+    .buy-ticket{
+        border: none;
+        .ticket-header{
+            display: block;
+            img{
+                display: none;
+            }
+            .info{
+               .form{
+                .field{
+                    flex-direction: column;
+                    align-items: center;
+                    input{
+                        
+                    }
+                }
+               }
+               .subtext{
+                display: none;
+               }
+            }
+          }
+    }
+  }
 }

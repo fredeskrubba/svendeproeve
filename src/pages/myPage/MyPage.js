@@ -59,7 +59,7 @@ const MyPage = () => {
               <p>FORESTILLING</p>
               <p>REDIGER</p>
             </div>
-            {favourites.error !== "No records found!" ? favourites.items.map((favourite)=>{
+            {favourites.error !== "No records found!" && favourites !== "" ? favourites.items.map((favourite)=>{
               return <FavouritesBlock name={favourite.title} key={favourite.event_id} token={token.access_token} eventId={favourite.event_id}/>
             }) : null}
           </section>

@@ -109,7 +109,7 @@ nav .login-tab {
   gap: 1vw;
   padding: 2vw;
   right: 8vw;
-  top: 13vw;
+  top: 18vw;
 }
 nav .login-tab div {
   display: flex;
@@ -923,7 +923,7 @@ footer .icons {
   white-space: nowrap;
 }
 .buy-ticket .ticket-header .info .form .field input {
-  width: 85%;
+  width: 70%;
   border-radius: 5px;
   border: #707070 1px solid;
   box-sizing: border-box;
@@ -937,7 +937,7 @@ footer .icons {
 .buy-ticket .ticket-header .info .form .field .double-field {
   display: flex;
   gap: 0;
-  width: 85%;
+  width: 70%;
 }
 .buy-ticket .ticket-header .info .form .field .double-field .double-field-1 {
   border-top-right-radius: 0;
@@ -1130,6 +1130,24 @@ footer .icons {
   padding-bottom: 5vw;
 }
 
+@media screen and (max-width: 800px) {
+  .container .buy-ticket {
+    border: none;
+  }
+  .container .buy-ticket .ticket-header {
+    display: block;
+  }
+  .container .buy-ticket .ticket-header img {
+    display: none;
+  }
+  .container .buy-ticket .ticket-header .info .form .field {
+    flex-direction: column;
+    align-items: center;
+  }
+  .container .buy-ticket .ticket-header .info .subtext {
+    display: none;
+  }
+}
 body {
   font-family: "Titillium Web", sans-serif;
   margin: 0;

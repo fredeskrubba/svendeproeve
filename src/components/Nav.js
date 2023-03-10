@@ -88,7 +88,7 @@ const Nav = () => {
                 <p className='login-button' onClick={()=>{
                 login("https://api.mediehuset.net/token", username, password)
                 if(loggedIn){
-                  setLocation("/mypage")
+                  setLocation("/myPage")
     }
                 }}>Login</p>
         </div>
