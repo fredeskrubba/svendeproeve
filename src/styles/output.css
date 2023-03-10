@@ -784,6 +784,276 @@ footer .icons {
   font-size: 1vw;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.buy-ticket {
+  border: 1px solid #ad7a51;
+  margin-top: 2vw;
+  text-align: center;
+}
+.buy-ticket .ticket-header {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  box-sizing: border-box;
+}
+.buy-ticket .ticket-header img {
+  width: 100%;
+  height: 100%;
+  border: 5px solid #ad7a51;
+  display: block;
+  box-sizing: border-box;
+  object-fit: cover;
+  object-position: center;
+}
+.buy-ticket .ticket-header .info {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  color: #707070;
+}
+.buy-ticket .ticket-header .info h1 {
+  font-size: 4vw;
+  color: #d39d5b;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  border-bottom: 1px solid #dfdfdf;
+  margin: 0;
+  padding: 1vw 0;
+  text-align: end;
+}
+.buy-ticket .ticket-header .info h2 {
+  color: #707070;
+  text-align: end;
+  margin: 2vw 0;
+  margin-bottom: 0;
+  font-size: 2vw;
+}
+.buy-ticket .ticket-header .info .place {
+  text-align: end;
+  margin: 0;
+  font-size: 2vw;
+}
+.buy-ticket .ticket-header .info .form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 1vw;
+  margin-top: 3vw;
+}
+.buy-ticket .ticket-header .info .form .field {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  white-space: nowrap;
+}
+.buy-ticket .ticket-header .info .form .field input {
+  width: 85%;
+  border-radius: 5px;
+  border: #707070 1px solid;
+  box-sizing: border-box;
+  padding: 1vw;
+  color: #d39d5b;
+}
+.buy-ticket .ticket-header .info .form .field input:focus {
+  outline: none;
+  color: #d39d5b;
+}
+.buy-ticket .ticket-header .info .form .field .double-field {
+  display: flex;
+  gap: 0;
+  width: 85%;
+}
+.buy-ticket .ticket-header .info .form .field .double-field .double-field-1 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+  width: 100%;
+}
+.buy-ticket .ticket-header .info .form .field .double-field .double-field-2 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  width: 100%;
+}
+.buy-ticket .ticket-header .info .subtext {
+  align-self: flex-end;
+  font-weight: 300;
+  font-size: 0.7vw;
+  margin: 0;
+}
+.buy-ticket .ticket-header .info .amount {
+  display: flex;
+  gap: 0.5vw;
+  align-self: flex-end;
+  margin: 2vw 0;
+  align-items: center;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider {
+  display: flex;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider p {
+  background-color: #DEDEDE;
+  color: black;
+  padding: 1vw;
+  margin: 0;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .reduce {
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  cursor: pointer;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .num {
+  background-color: #EEEEEE;
+  width: 1vw;
+  text-align: center;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .add {
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.buy-ticket .ticket-header .info .amount .amount-slider .add:hover {
+  cursor: pointer;
+}
+.buy-ticket .ticket-header .info .amount .current-price {
+  font-size: 1.5vw;
+  margin: 0;
+  color: black;
+}
+.buy-ticket .ticket-header .info .amount .tax {
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info {
+  display: flex;
+  flex-direction: column;
+  padding: 2vw;
+  color: #707070;
+  align-items: flex-start;
+}
+.buy-ticket .ticket-header .confirm-info h1 {
+  font-size: 4vw;
+  color: #d39d5b;
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  border-bottom: 1px solid #dfdfdf;
+  margin: 0;
+  padding: 1vw 0;
+  text-align: end;
+  width: 100%;
+}
+.buy-ticket .ticket-header .confirm-info h2 {
+  color: #707070;
+  text-align: start;
+  margin: 2vw 0;
+  margin-bottom: 0;
+  font-size: 2vw;
+}
+.buy-ticket .ticket-header .confirm-info .event {
+  display: flex;
+  gap: 0.2vw;
+  margin: 0.5vw 0;
+}
+.buy-ticket .ticket-header .confirm-info .event p {
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .event .header {
+  font-weight: 700;
+}
+.buy-ticket .ticket-header .confirm-info .bill {
+  width: 100%;
+}
+.buy-ticket .ticket-header .confirm-info .bill .info-row {
+  font-weight: 700;
+}
+.buy-ticket .ticket-header .confirm-info .bill .bill-row {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5vw;
+  border-bottom: 1px solid #dfdfdf;
+}
+.buy-ticket .ticket-header .confirm-info .bill .bill-row section {
+  display: flex;
+  justify-content: center;
+  gap: 1vw;
+}
+.buy-ticket .ticket-header .confirm-info .bill .sum {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 3vw;
+  border-bottom: #707070 1px solid;
+}
+.buy-ticket .ticket-header .confirm-info .bill .vat {
+  text-align: end;
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .customer p {
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .customer h2 {
+  margin: 0;
+}
+.buy-ticket .ticket-header .confirm-info .customer .email-notif {
+  font-weight: 400;
+}
+.buy-ticket .seats {
+  padding: 2vw;
+}
+.buy-ticket .seats h2 {
+  background-color: #ad7a51;
+  color: white;
+  font-size: 2vw;
+  text-align: center;
+  margin: 0;
+}
+.buy-ticket .seats .seat-select {
+  margin-top: 1vw;
+  display: grid;
+  grid-template-columns: repeat(22, 1fr);
+  row-gap: 1vw;
+  justify-content: center;
+  align-items: center;
+}
+.buy-ticket .seats .seat-select .seat {
+  height: 2vw;
+  width: 2vw;
+  border: 1px solid #d39d5b;
+  border-radius: 100%;
+  place-self: center;
+}
+
+.submit {
+  background-color: #ad7a51;
+  color: white;
+  padding: 1vw 2vw;
+  align-self: flex-end;
+  font-weight: 700;
+  margin-top: 2vw;
+}
+.submit:hover {
+  cursor: pointer;
+}
+
+.submit-buttons {
+  display: flex;
+  gap: 2vw;
+  align-self: flex-end;
+}
+
+.thanks {
+  border: 1px solid #d39d5b;
+  text-align: center;
+  margin-bottom: 13vw;
+  margin-top: 2vw;
+}
+.thanks h1 {
+  color: #d39d5b;
+  font-family: "Playfair Display", serif;
+  font-size: 4vw;
+  font-weight: 400;
+  padding-bottom: 5vw;
+}
+
 body {
   font-family: "Titillium Web", sans-serif;
   margin: 0;
